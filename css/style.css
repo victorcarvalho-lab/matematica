@@ -79,3 +79,18 @@ footer {
 h1, h2 {
   margin-top: 0;
 }
+
+.btn-answer {
+    background-color: #f39c12;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-answer:hover {
+    background-color: #d68910;
+}
