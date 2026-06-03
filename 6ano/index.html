@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6º Ano</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+
+        .content-card{
+            background:#fff;
+            border-radius:12px;
+            padding:20px;
+            margin:20px 0;
+            box-shadow:0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .content-card h3{
+            margin-top:0;
+            color:#2c3e50;
+        }
+
+        .button-group{
+            margin-top:15px;
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+        }
+
+        .btn-theory{
+            background:#3498db;
+            color:white;
+            text-decoration:none;
+            padding:10px 16px;
+            border-radius:8px;
+            font-weight:bold;
+            transition:.3s;
+        }
+
+        .btn-theory:hover{
+            background:#2980b9;
+        }
+
+        .btn-list{
+            background:#27ae60;
+            color:white;
+            text-decoration:none;
+            padding:10px 16px;
+            border-radius:8px;
+            font-weight:bold;
+            transition:.3s;
+        }
+
+        .btn-list:hover{
+            background:#1e8449;
+        }
+
+        .back-btn{
+            display:inline-block;
+            margin-top:25px;
+            background:#34495e;
+            color:white;
+            padding:10px 16px;
+            border-radius:8px;
+            text-decoration:none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<header>
+    <h1>📚 6º Ano</h1>
+    <p>Conteúdos e atividades da turma</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Conteúdos Disponíveis</h2>
+
+        <div class="content-card">
+
+            <h3>📚 Números Primos</h3>
+
+            <p>
+                Aprenda o que são números primos,
+                números compostos e como identificá-los.
+            </p>
+
+            <div class="button-group">
+
+                <a href="numeros_primos.html"
+                   class="btn-theory">
+                   📖 Teoria
+                </a>
+
+                <a href="listas/lista_primos.pdf"
+                   target="_blank"
+                   class="btn-list">
+                   📝 Exercícios
+                </a>
+
+		 <a href="gabaritos/gabarito_primos.pdf"
+                   target="_blank"
+                   class="btn-theory">
+                   ✅ Gabarito
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="content-card">
+
+            <h3>📚 MMC e MDC</h3>
+
+            <p>
+                Aprenda a calcular o Mínimo Múltiplo Comum
+                e o Máximo Divisor Comum.
+            </p>
+
+            <div class="button-group">
+
+                <a href="mmc_mdc.html"
+                   class="btn-theory">
+                   📖 Teoria
+                </a>
+
+                <a href="listas/lista_mmc_mdc.pdf"
+                   target="_blank"
+                   class="btn-list">
+                   📝 Exercícios
+                </a>
+
+		<a href="gabaritos/gabarito_mmc_mdc.pdf"
+                   target="_blank"
+                   class="btn-theory">
+                   ✅ Gabarito
+		</a>
+
+            </div>
+
+        </div>
+
+        <a href="../index.html" class="back-btn">
+            ⬅ Voltar ao início
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
