@@ -2,29 +2,224 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velha Matemática</title>
 
-  <title>8º Ano</title>
-
-  <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<header>
-  <h1>8º Ano</h1>
-</header>
 
-<div class="container">
-  <div class="card">
+    <!-- ========================= -->
+    <!-- TELA INICIAL -->
+    <!-- ========================= -->
 
-<h1>Turma - 8º Ano</h1>
-<p>Bem-vindos à página do 8º ano.</p>
-<p>Em breve novos conteúdos.</p>
-<a href="../index.html">Voltar</a>
+    <section id="home-screen" class="screen active">
 
-  </div>
-</div>
+        <div class="logo-container">
+            <h1>Velha Matemática</h1>
+            <p>Acerte para conquistar o tabuleiro!</p>
+        </div>
+
+        <button id="play-btn" class="main-button">
+            Jogar
+        </button>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- CONFIGURAÇÃO -->
+    <!-- ========================= -->
+
+    <section id="config-screen" class="screen">
+
+        <h2>Configuração da Partida</h2>
+
+        <div class="config-group">
+
+            <h3>Escolha seu símbolo</h3>
+
+            <div class="symbol-container">
+
+                <button class="symbol-btn selected" data-symbol="X">
+                    X
+                </button>
+
+                <button class="symbol-btn" data-symbol="O">
+                    O
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="config-group">
+
+            <h3>Dificuldade</h3>
+
+            <div class="difficulty-container">
+
+                <button class="difficulty-btn selected" data-level="easy">
+                    Fácil
+                </button>
+
+                <button class="difficulty-btn" data-level="medium">
+                    Médio
+                </button>
+
+                <button class="difficulty-btn" data-level="hard">
+                    Difícil
+                </button>
+
+            </div>
+
+        </div>
+
+        <button id="start-game-btn" class="main-button">
+            Iniciar Partida
+        </button>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- TELA DO JOGO -->
+    <!-- ========================= -->
+
+    <section id="game-screen" class="screen">
+
+        <!-- HUD -->
+
+        <header class="game-header">
+
+            <div class="player-turn">
+                Jogador: <span id="current-player">X</span>
+            </div>
+
+            <div class="timer">
+                ⏱ <span id="timer-display">00:30</span>
+            </div>
+
+            <button id="sound-btn">
+                🔊
+            </button>
+
+        </header>
+
+        <!-- TABULEIRO -->
+
+        <div id="board" class="board">
+
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+
+        </div>
+
+        <div class="game-message">
+
+            <p id="message">
+                Toque em uma casa para jogar.
+            </p>
+
+        </div>
+
+        <div class="game-actions">
+
+            <button id="restart-btn" class="secondary-button">
+                Reiniciar
+            </button>
+
+            <button id="back-menu-btn" class="secondary-button">
+                Menu
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- MODAL DE PERGUNTA -->
+    <!-- ========================= -->
+
+    <div id="question-modal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="question-header">
+
+                <h2>DESAFIO</h2>
+
+                <div id="question-timer" class="question-timer">
+                    30
+                </div>
+
+            </div>
+
+            <h3 id="question-text">
+                168 ÷ 12 = ?
+            </h3>
+
+            <div id="answers-container">
+
+                <button class="answer-btn">
+                    A) 12
+                </button>
+
+                <button class="answer-btn">
+                    B) 14
+                </button>
+
+                <button class="answer-btn">
+                    C) 16
+                </button>
+
+                <button class="answer-btn">
+                    D) 18
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- TELA DE VITÓRIA -->
+    <!-- ========================= -->
+
+    <div id="victory-screen" class="modal">
+
+        <div class="victory-content">
+
+            <h1 id="winner-text">
+                X VENCEU!
+            </h1>
+
+            <p>
+                Parabéns! Você dominou o tabuleiro.
+            </p>
+
+            <button id="play-again-btn" class="main-button">
+                Jogar Novamente
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="js/questions.js"></script>
+    <script src="js/generator.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/game.js"></script>
+    <script src="app.js"></script>
 
 </body>
 </html>

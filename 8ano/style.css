@@ -1,0 +1,486 @@
+```css
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #141E30,
+        #243B55,
+        #0F2027
+    );
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
+
+    color: white;
+}
+
+/* ========================= */
+/* ANIMAÇÃO FUNDO */
+/* ========================= */
+
+@keyframes gradientMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+/* ========================= */
+/* TELAS */
+/* ========================= */
+
+.screen {
+    display: none;
+
+    min-height: 100vh;
+
+    padding: 25px;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.logo-container h1 {
+
+    font-size: 3rem;
+
+    color: #4FC3F7;
+
+    text-shadow:
+        0 0 10px #4FC3F7,
+        0 0 20px #4FC3F7;
+
+    margin-bottom: 10px;
+}
+
+.logo-container p {
+    color: #d6d6d6;
+    margin-bottom: 40px;
+}
+
+/* ========================= */
+/* BOTÕES */
+/* ========================= */
+
+.main-button,
+.secondary-button {
+
+    border: none;
+
+    cursor: pointer;
+
+    border-radius: 20px;
+
+    padding: 15px 35px;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.main-button {
+
+    background: #00C2FF;
+
+    color: #09131f;
+
+    box-shadow:
+        0 0 15px rgba(0,194,255,.5);
+}
+
+.main-button:hover {
+    transform: scale(1.05);
+}
+
+.secondary-button {
+
+    background: rgba(255,255,255,.12);
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,.2);
+}
+
+/* ========================= */
+/* CONFIGURAÇÃO */
+/* ========================= */
+
+.config-group {
+
+    margin: 20px 0;
+}
+
+.config-group h3 {
+    margin-bottom: 12px;
+}
+
+.symbol-container,
+.difficulty-container {
+
+    display: flex;
+
+    gap: 12px;
+
+    justify-content: center;
+}
+
+.symbol-btn,
+.difficulty-btn {
+
+    border: none;
+
+    padding: 15px 25px;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    background: rgba(255,255,255,.1);
+
+    color: white;
+
+    transition: .3s;
+}
+
+.selected {
+
+    background: #00C2FF;
+
+    color: #09131f;
+
+    font-weight: bold;
+}
+
+/* ========================= */
+/* HUD */
+/* ========================= */
+
+.game-header {
+
+    width: 100%;
+
+    max-width: 450px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.player-turn,
+.timer {
+
+    background: rgba(255,255,255,.12);
+
+    backdrop-filter: blur(10px);
+
+    padding: 10px 15px;
+
+    border-radius: 15px;
+}
+
+#sound-btn {
+
+    border: none;
+
+    background: rgba(255,255,255,.12);
+
+    color: white;
+
+    padding: 10px;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+}
+
+/* ========================= */
+/* TABULEIRO */
+/* ========================= */
+
+.board {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    width: 100%;
+
+    max-width: 360px;
+}
+
+.cell {
+
+    aspect-ratio: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 3rem;
+
+    font-weight: bold;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    background: rgba(255,255,255,.08);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    transition: .3s;
+}
+
+.cell:hover {
+
+    transform: scale(1.05);
+
+    background: rgba(255,255,255,.15);
+}
+
+/* ========================= */
+/* X E O */
+/* ========================= */
+
+.x {
+
+    color: #4FC3F7;
+
+    text-shadow:
+        0 0 10px #4FC3F7,
+        0 0 20px #4FC3F7;
+}
+
+.o {
+
+    color: #FFB74D;
+
+    text-shadow:
+        0 0 10px #FFB74D,
+        0 0 20px #FFB74D;
+}
+
+/* ========================= */
+/* MENSAGEM */
+/* ========================= */
+
+.game-message {
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.game-message p {
+
+    font-size: 1rem;
+
+    color: #dcdcdc;
+}
+
+/* ========================= */
+/* AÇÕES */
+/* ========================= */
+
+.game-actions {
+
+    display: flex;
+
+    gap: 10px;
+}
+
+/* ========================= */
+/* MODAL */
+/* ========================= */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.7);
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+}
+
+.modal.active {
+
+    display: flex;
+}
+
+.modal-content,
+.victory-content {
+
+    width: 100%;
+
+    max-width: 420px;
+
+    background: rgba(255,255,255,.1);
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    border: 1px solid rgba(255,255,255,.15);
+}
+
+/* ========================= */
+/* PERGUNTA */
+/* ========================= */
+
+.question-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.question-timer {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border: 3px solid #FFB74D;
+
+    color: #FFB74D;
+
+    font-weight: bold;
+}
+
+#question-text {
+
+    margin-bottom: 20px;
+
+    font-size: 1.8rem;
+}
+
+.answer-btn {
+
+    width: 100%;
+
+    margin-bottom: 10px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    cursor: pointer;
+
+    background: rgba(255,255,255,.1);
+
+    color: white;
+
+    transition: .3s;
+}
+
+.answer-btn:hover {
+
+    background: #00C2FF;
+
+    color: #09131f;
+}
+
+/* ========================= */
+/* VITÓRIA */
+/* ========================= */
+
+.victory-content h1 {
+
+    color: #4FC3F7;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 10px #4FC3F7,
+        0 0 20px #4FC3F7;
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+    .logo-container h1 {
+
+        font-size: 2.3rem;
+    }
+
+    .cell {
+
+        font-size: 2.5rem;
+    }
+
+    #question-text {
+
+        font-size: 1.5rem;
+    }
+}
+```
